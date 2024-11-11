@@ -1,0 +1,12 @@
+<!-- src/app/Components/pokedex/pokedex.component.html  -->
+<section class="pokemon-image-section">
+    <img [src]="imageURL" alt="Pokemon Image">
+    <div class="navigation-controls">
+        <button class="nav-button" (click)="previousPokemon()"><</button>
+        
+        <!-- Añadir evento de clic para mostrar un Pokémon aleatorio -->
+        <div class="nav-indicator" (click)="randomPokemon()"></div>
+        
+        <button class="nav-button" (click)="nextPokemon()">></button>
+    </div>
+</section>

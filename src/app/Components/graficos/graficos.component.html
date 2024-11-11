@@ -1,0 +1,44 @@
+<!-- src/app/Components/graficos/graficos.component.html -->
+
+<div class="stats-container">
+    <div class="screen-border">
+        <div class="screen">
+            <div class="pokemon-info">
+                <div class="header-info">
+                    <span class="pokemon-id">{{id}}</span>
+                    <h2 class="pokemon-name">{{nombrePokemon}}</h2>
+                </div>
+                <div class="type-badge" [class]="'type-' + tipoPokemon.toLowerCase()">
+                    {{tipoPokemon}}
+                </div>
+            </div>
+
+            <!-- Sección de estadísticas -->
+            <div class="stats-section">
+                <div class="stat-container">
+                    <label class="stat-item">Vida</label>
+                    <div class="stat-bar">
+                        <div class="stat-fill hp" [style.width.%]="vidaPokemon"></div>
+                        <span class="stat-value">{{vidaPokemon}}/100</span>
+                    </div>
+                </div>
+
+                <div class="stat-container">
+                    <label class="stat-item">Ataque</label>
+                    <div class="stat-bar">
+                        <div class="stat-fill atk" [style.width.%]="ataquePokemon"></div>
+                        <span class="stat-value">{{ataquePokemon}}/100</span>
+                    </div>
+                </div>
+
+                <div class="stat-container">
+                    <label class="stat-item">Defensa</label>
+                    <div class="stat-bar">
+                        <div class="stat-fill def" [style.width.%]="defensaPokemon"></div>
+                        <span class="stat-value">{{defensaPokemon}}/100</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<!-- src/app/Components/pokedex-view/pokedex-view.component.html  -->
+
+<div class="pokedex-view">
+    <span class="header-title">POKEDEX 🕹️🎮</span>
+    <section class="pokedex">
+        <div class="display-container">
+            <div class="image-area">
+                <app-pokedex 
+                    [imageURL]="pokemonImagen" 
+                    (pokemonId)="changePokemon($event)">
+                </app-pokedex>
+            </div>
+            <div class="status-lights">
+                <span class="light"></span>
+                <span class="light"></span>
+            </div>
+            <div class="info-panel">
+                <app-grafico
+                    [id]="pokemonData.id"
+                    [nombrePokemon]="pokemonData.nombre"
+                    [tipoPokemon]="pokemonData.tipo"
+                    [vidaPokemon]="pokemonData.vida"
+                    [ataquePokemon]="pokemonData.ataque"
+                    [defensaPokemon]="pokemonData.defensa">
+                </app-grafico>
+            </div> 
+        </div>
+    
+    </section>
+</div>

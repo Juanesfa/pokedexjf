@@ -1,0 +1,178 @@
+/* src/app/Components/graficos/graficos.component.css */
+/* Contenedor principal que envuelve todo el componente de estadísticas del Pokémon */
+.pokemon-stats-container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background: #282c34; /* Fondo oscuro */
+    border-radius: 12px; /* Bordes redondeados */
+}
+
+/* Borde exterior del área de estadísticas */
+.outer-screen-border {
+    background: #000;
+    border: 4px solid #555; /* Borde gris oscuro */
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: inset 0 0 15px rgba(0, 183, 255, 0.3); /* Sombra interior azul */
+}
+
+/* Contenedor interno que contiene la información del Pokémon */
+.inner-screen {
+    background: #1c1f26; /* Fondo oscuro */
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre elementos */
+    position: relative;
+    overflow: hidden; /* Oculta cualquier elemento que sobresalga */
+}
+
+/* Detalles principales del Pokémon */
+.pokemon-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre elementos */
+}
+
+/* Encabezado que contiene el ID y el nombre del Pokémon */
+.info-header {
+    display: flex;
+    justify-content: space-between; /* Espacia el ID y el nombre del Pokémon */
+    align-items: center;
+}
+
+/* Estilo para el ID del Pokémon */
+.pokemon-id {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8em;
+    color: #00b7ff; /* Azul claro */
+    opacity: 0.9; /* Transparencia ligera */
+    text-shadow: 0 0 6px rgba(0, 183, 255, 0.5); /* Efecto de brillo */
+
+}
+
+/* Estilo para el nombre del Pokémon */
+.pokemon-name {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.4em;
+    color: #00b7ff;
+    margin: 0;
+    text-shadow: 0 0 6px rgba(0, 183, 255, 0.5); /* Efecto de brillo */
+}
+
+/* Badges de tipo de Pokémon */
+.type-badge {
+    align-self: center;
+    padding: 5px 18px;
+    border-radius: 12px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.85em;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    background: rgba(0, 183, 255, 0.2); /* Fondo azul translúcido */
+    color: #00b7ff;
+    border: 1px solid #00b7ff;
+}
+
+/* Sección de estadísticas con un diseño en columna */
+.pokemon-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre las barras de estadísticas */
+}
+
+/* Cada contenedor de estadística incluye el nombre y la barra */
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espacio entre el label y la barra */
+}
+
+/* Etiquetas de estadísticas (HP, ATK, DEF) */
+.stat-item {
+    width: 45px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.85em;
+    color: #00b7ff;
+    text-shadow: 0 0 6px rgba(0, 183, 255, 0.5); /* Efecto de brillo */
+
+}
+
+/* Contenedor de barra de estadísticas */
+.stat-bar {
+    flex: 1; /* La barra ocupa todo el ancho disponible */
+    height: 22px;
+    background: rgba(0, 183, 255, 0.1); /* Fondo azul translúcido */
+    border: 1px solid #00b7ff;
+    border-radius: 12px;
+    overflow: hidden; /* Oculta el relleno que sobresale */
+    position: relative;
+}
+
+/* Relleno de la barra que muestra el porcentaje de estadística */
+.stat-fill {
+    height: 100%;
+    transition: width 0.3s ease-out; /* Animación suave para la actualización de la barra */
+}
+
+/* Relleno de la barra de vida */
+.stat-fill.hp {
+    background: linear-gradient(90deg, #00ff7f 0%, #33ff99 100%); /* De verde claro a oscuro */
+}
+
+/* Relleno de la barra de ataque */
+.stat-fill.atk {
+    background: linear-gradient(90deg, #ff5555 0%, #ff7777 100%); /* De rojo claro a oscuro */
+}
+
+/* Relleno de la barra de defensa */
+.stat-fill.def {
+    background: linear-gradient(90deg, #5555ff 0%, #7777ff 100%); /* De azul claro a oscuro */
+}
+
+/* Valor de estadística mostrado al final de la barra */
+.stat-value {
+    position: absolute;
+    right: 8px; /* Alineado a la derecha */
+    top: 50%;
+    transform: translateY(-50%); /* Centrado verticalmente */
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.75em;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra para mejorar legibilidad */
+}
+
+/* Animación de efecto de pantalla */
+.inner-screen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 183, 255, 0.1); /* Línea azul translúcida */
+    animation: scanline 3s linear infinite; /* Animación de línea descendente */
+    pointer-events: none;
+}
+
+
+/* Estilos de fondo de acuerdo con los tipos de Pokémon */
+.type-normal { background-color: rgba(170, 170, 120, 0.3); }
+.type-fire { background-color: rgba(240, 130, 48, 0.3); }
+.type-water { background-color: rgba(104, 145, 240, 0.3); }
+.type-electric { background-color: rgba(250, 210, 48, 0.3); }
+.type-grass { background-color: rgba(120, 200, 80, 0.3); }
+.type-ice { background-color: rgba(155, 220, 220, 0.3); }
+/* Continuación para más tipos de Pokémon */
+
+/* Efecto al pasar el ratón sobre la barra de estadísticas */
+.stat-bar:hover .stat-fill {
+    filter: brightness(1.3); /* Incrementa el brillo */
+}
+
+/* Efecto de escala al pasar el ratón sobre la insignia de tipo */
+.type-badge:hover {
+    transform: scale(1.08);
+    transition: transform 0.3s ease; /* Animación de escala */
+}
